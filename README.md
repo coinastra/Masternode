@@ -28,26 +28,26 @@ sudo add-apt-repository ppa:bitcoin/bitcoin
 sudo apt-get update
 sudo apt-get install libdb4.8-dev libdb4.8++-dev
 
-Download the daemon and tools from Astracoin. 
+Download the daemon and tools from Astra. 
 
 Extract the tar files.
 
-tar -xzvf astracoin-daemon-linux.tar.gz
-tar -xzvf astracoin-qt-linux.tar.gz
+tar -xzvf astra-daemon-linux.tar.gz
+tar -xzvf astra-qt-linux.tar.gz
 
 Install the daemon and tools.
 
-sudo mv astracoincoind astracoin-cli astracoin-tx /usr/bin/
+sudo mv astrad astra-cli astra-tx /usr/bin/
 
 Create the config file.
 
-mkdir $HOME/.astracoin
-nano $HOME/.astracoin/astracoin.conf
+mkdir $HOME/.astra
+nano $HOME/.astra/astra.conf
 
 Paste the following lines in examplecoin.conf.
 
 #----
-rpcuser=rpc_astracoin
+rpcuser=rpc_astra
 rpcpassword=kuw05sqio7bcm8z96o7redv17xws1lw6xpd1qf33
 rpcallowip=127.0.0.1
 #----
@@ -69,7 +69,7 @@ E.G. externalip=136.144.171.201
 
 Start your node with the following command.
 
-astracoind
+astrad
 
 Wait until the command “mnsync status” returns the status “MASTERNODE_SYNC_FINISHED”.
 
@@ -144,7 +144,7 @@ Place the secret key in the config file of your masternode and uncomment the val
 Example config
 
 #----
-rpcuser=rpc_astracoin
+rpcuser=rpc_astra
 rpcpassword=kuw05sqio7bcm8z96o7redv17xws1lw6xpd1qf33
 rpcallowip=127.0.0.1
 #----
@@ -160,8 +160,8 @@ externalip=136.144.171.201
 
 Restart your masternode using the following commands.
 
-astracoin-cli stop
-astracoind
+astra-cli stop
+astrad
 
 
 Prepare a ProRegTx transaction
